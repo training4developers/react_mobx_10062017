@@ -8,7 +8,8 @@ Eric Greene - [http://t4d.io](http://t4d.io) - [LinkedIn](https://www.linkedin.c
 
 Class:
 
-- Monday - Friday, 9am to 5pm CDT
+- Dates: 10/6, 10/9, 10/12, 10/13, 11/3
+- Time: 9am to 5pm CDT
 
 Breaks:
 
@@ -19,7 +20,7 @@ Breaks:
 
 ## Course Outline
 
-### Monday’s Topics
+### First Day Topics
 
 - Creating a Component & JSX
 - Display a Static List/Table with JSX
@@ -27,37 +28,31 @@ Breaks:
 - Styling Components
 - Passing Data in with Props
 
-### Tuesday’s Topics
+### Second Day Topics
 
 - Working with State and Form Fields
 - Working with State and Processing Form Data
 - Decomposition and Props
 - Decomposition and State
 
-### Wednesday’s Topics
+### Third Day Topics
 
 - Stateless Functions
 - Adding PropTypes
 - Understanding Keys
 - Using Refs and Life Cycle Functions
-- Pure Components
 
 ### Thursday’s Topics
 
+- Pure Components
 - User Interface Routing
-- Principles of Redux
-- Reducers and Actions
+- Managing State with MobX
 
 ### Friday’s Topics
 
-- Integrating Redux with React
-- Connecting Redux to REST Services
+- Integrating MobX with React
+- Connecting MobX to REST Services
 - Unit Testing
-
-[Course Login](https://www.t4d.school/login/index.php)
-
-- Username: Email account name without the @ symbol and domain
-- Password: t4dpass (you will be prompted to change it on first login)
 
 ## Links
 
@@ -153,6 +148,7 @@ From a terminal, in the root project folder (where the **package.json** file exi
 ### Useful Resources
 
 - [React](https://facebook.github.io/react/)
+- [MobX] (https://mobx.js.org/)
 - [Redux](http://redux.js.org/)
 - [GraphQL](http://graphql.org/)
 - [Relay](https://facebook.github.io/relay/)
