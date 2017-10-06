@@ -2,7 +2,7 @@
 
 ## Instructor
 
-Eric Greene - [http://t4d.io](http://t4d.io) - [LinkedIn](https://www.linkedin.com/in/ericwgreene)
+Eric Greene - [LinkedIn](https://www.linkedin.com/in/ericwgreene)
 
 ## Schedule
 
