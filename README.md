@@ -19,9 +19,9 @@ Breaks:
 
 ## Course Outline
 
-Days 1 & 2 - React
-Days 3 & 4 - MobX + React
-Day 5 - Remaining Topics
+- Days 1 & 2 - React
+- Days 3 & 4 - MobX + React
+- Day 5 - Remaining Topics
 
 ## Links
 
