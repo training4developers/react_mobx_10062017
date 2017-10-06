@@ -28,7 +28,6 @@ Breaks:
 ### Instructor's Resources
 
 - [Accelebrate](http://www.accelebrate.com/)
-- [Eric's Blog](http://t4d.io/)
 - [WintellectNOW](https://www.wintellectnow.com/Home/Instructor?instructorId=EricGreene) - Special Offer Code: GREENE-2016
 - [Microsoft Virtual Academy](https://mva.microsoft.com/search/SearchResults.aspx#!q=Eric%20Greene&lang=1033)
 - [React Labs](https://github.com/Microsoft/TechnicalCommunityContent/tree/master/Web%20Frameworks/React)
