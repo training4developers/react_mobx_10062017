@@ -9,50 +9,19 @@ Eric Greene - [http://t4d.io](http://t4d.io) - [LinkedIn](https://www.linkedin.c
 Class:
 
 - Dates: 10/6, 10/9, 10/12, 10/13, 11/3
-- Time: 9am to 5pm CDT
+- Time: 8:30am to 4:30pm CDT
 
 Breaks:
 
-- Morning: 10:25am - 10:35am
+- Morning: 10:15am - 10:30am
 - Lunch: Noon to 1pm
-- Afternoon #1: 2:15pm - 2:25pm
-- Afternoon #2: 3:40pm - 3:50pm
+- Afternoon: 2:45pm - 3:00pm
 
 ## Course Outline
 
-### First Day Topics
-
-- Creating a Component & JSX
-- Display a Static List/Table with JSX
-- Display a Dynamic List/Table with JSX and Map
-- Styling Components
-- Passing Data in with Props
-
-### Second Day Topics
-
-- Working with State and Form Fields
-- Working with State and Processing Form Data
-- Decomposition and Props
-- Decomposition and State
-
-### Third Day Topics
-
-- Stateless Functions
-- Adding PropTypes
-- Understanding Keys
-- Using Refs and Life Cycle Functions
-
-### Thursday’s Topics
-
-- Pure Components
-- User Interface Routing
-- Managing State with MobX
-
-### Friday’s Topics
-
-- Integrating MobX with React
-- Connecting MobX to REST Services
-- Unit Testing
+Days 1 & 2 - React
+Days 3 & 4 - MobX + React
+Day 5 - Remaining Topics
 
 ## Links
 
