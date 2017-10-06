@@ -1,8 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import { HelloWorld } from './components/hello-world';
+// named import
+import { ColorTool } from './components/color-tool';
 
-ReactDOM.render(<HelloWorld />, document.querySelector('main'));
 
-
+ReactDOM.render(React.createElement(ColorTool), document.querySelector('main'));
