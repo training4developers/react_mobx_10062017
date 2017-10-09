@@ -1,5 +1,8 @@
 import * as React from 'react';
 
+import { ToolHeader } from './tool-header';
+import { ColorForm } from './color-form';
+
 // named export
 export class ColorTool extends React.Component {
 
@@ -24,44 +27,24 @@ export class ColorTool extends React.Component {
     });
   }
 
-  onClick = () => {
+  addNewColor = color => {
 
     const nextId = Math.max(...this.state.colors.map(c => c.id)) + 1;
 
-    const color = {
-      id: nextId,
-      name: this.state.newColorName,
-      hexCode: this.state.newColorHexCode,
-    };
+    color.id = nextId;
 
     this.setState({
       colors: this.state.colors.concat(color),
-      newColorName: '',
-      newColorHexCode: '',
     });
   };
 
   render() {
     return <div>
-      <header>
-        <h1>Color Tool</h1>
-      </header>
+      <ToolHeader headerText="Color Tool!" />
       <ul>
         {this.state.colors.map(color => <li key={color.id}>{color.name} - {color.hexCode}</li>)}
       </ul>
-      <form>
-        <div>
-          <label htmlFor="new-color-name-input">New Color Name:</label>
-          <input type="text" id="new-color-name-input" name="newColorName"
-            value={this.state.newColorName} onChange={this.onChange} />
-        </div>
-        <div>
-          <label htmlFor="new-color-hexcode-input">New Color HexCode:</label>
-          <input type="color" id="new-color-hexcode-input" name="newColorHexCode"
-            value={this.state.newColorHexCode} onChange={this.onChange} />
-        </div>
-        <button type="button" onClick={this.onClick}>Add Color</button>
-      </form>
+      <ColorForm onSaveColor={this.addNewColor} />
     </div>;
   }
 
