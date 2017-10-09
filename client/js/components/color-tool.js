@@ -1,30 +1,18 @@
 import * as React from 'react';
 
 import { ToolHeader } from './tool-header';
+import { UnorderedList } from './unordered-list';
 import { ColorForm } from './color-form';
 
-// named export
+
 export class ColorTool extends React.Component {
 
   constructor(props) {
     super(props);
 
     this.state = {
-      colors: props.colors.concat(),
-      newColorName: '',
-      newColorHexCode: '',
+      colors: props.colors.map(c => ({ id: c.id, value: c.name + ' ' + c.hexCode })),
     };
-
-    // onChange on the instance = onChange on the prototype
-    // producing a new function bound to the instance
-    //this.onChange = this.onChange.bind(this);
-  }
-
-  // class arrow
-  onChange = (e) => {
-    this.setState({
-      [ e.target.name ]: e.target.value,
-    });
   }
 
   addNewColor = color => {
@@ -38,12 +26,34 @@ export class ColorTool extends React.Component {
     });
   };
 
+  deleteColor = colorId => {
+
+    const colorToDeleteIndex = this.state.colors.findIndex(color => color.id === colorId);
+
+    //this.state.colors.splice(colorToDeleteIndex, 1);
+
+    this.setState({
+      colors: this.state.colors.slice(0, colorToDeleteIndex).concat(this.state.colors.slice(colorToDeleteIndex + 1)),
+//      colors: [ ...this.state.colors.slice(0, colorToDeleteIndex), ...this.state.colors.slice(colorToDeleteIndex + 1) ],
+        //colors: this.state.colors,
+    });
+
+  }
+
+  onChange = (e) => {
+    this.setState({
+      someValue: e.target.value,
+    });
+  }
+
   render() {
     return <div>
+      <div>
+        <input type="text" value={this.someValue} onChange={this.onChange} />
+      </div>
       <ToolHeader headerText="Color Tool!" />
-      <ul>
-        {this.state.colors.map(color => <li key={color.id}>{color.name} - {color.hexCode}</li>)}
-      </ul>
+      <UnorderedList onDelete={this.deleteColor}
+        items={this.state.colors} />
       <ColorForm onSaveColor={this.addNewColor} />
     </div>;
   }
