@@ -20,7 +20,7 @@ CarViewRow.propTypes = {
     model: PropTypes.model,
     year: PropTypes.number,
     color: PropTypes.string,
-    price: PropTypes.string,
+    price: PropTypes.number,
   }),
   onEditCar: PropTypes.func,
   onDeleteCar: PropTypes.func,
