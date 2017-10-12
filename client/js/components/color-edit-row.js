@@ -1,8 +1,10 @@
 import * as React from 'react';
 
 export const ColorEditRow = props => {
+
   let colorNameInput;
   let colorNameHexCode;
+  
   return <tr>
     <td><input type="text" defaultValue={props.color.name} ref={input => colorNameInput = input} /></td>
     <td><input type="text" defaultValue={props.color.hexCode} ref={input => colorNameHexCode = input} /></td>
