@@ -1,22 +1,14 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import { useStrict } from 'mobx';
-import { Provider } from 'mobx-react';
+import { CarTool } from './components/car-tool';
 
-import DevTools from 'mobx-react-devtools';
- 
-import { CalcStore } from './stores/calc-store';
-import { CalcTool } from './components/calc-tool';
-
-useStrict(true);
+const carData = [
+  { id: 1, make: 'Ford', model: 'Fusion Hybrid', year: 2017, color: 'blue', price: 23000 },
+  { id: 2, make: 'Ford', model: 'Focus', year: 2015, color: 'yellow', price: 12000 },
+];
 
 ReactDOM.render(
-  <div>
-    <Provider calcStore={new CalcStore()}>
-      <CalcTool />
-    </Provider>
-  </div>,
+  <CarTool cars={carData} />,
   document.querySelector('main')
 );
-
