@@ -1,77 +1,32 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
+import { observer } from 'mobx-react';
 
 import { ToolHeader } from './tool-header';
 import { CarTable } from './car-table';
 import { CarForm } from './car-form';
 
+@observer
 export class CarTool extends React.Component {
 
   static propTypes = {
-    cars: PropTypes.array,
-    editCarId: PropTypes.number,
-  };
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      cars: props.cars.concat(),
-      editCarId: 0,
-    };
-  }
-
-  addCar = newCar => {
-
-    newCar.id = Math.max(...this.state.cars.map(car => car.id)) + 1;
-
-    this.setState({
-      cars: this.state.cars.concat(newCar),
-      editCarId: 0,
-    });
-  }
-
-  deleteCar = deleteCarId => {
-    this.setState({
-      cars: this.state.cars.filter(car => car.id !== deleteCarId),
-      editCarId: 0,
-    });
-  };
-
-  cancelCar = () => {
-    this.setState({
-      editCarId: 0,
-    });
-  };
-
-  saveCar = carToSave => {
-
-    const editCarIndex = this.state.cars.findIndex(car => car.id === carToSave.id);
-
-    this.setState({
-      cars: [
-        ...this.state.cars.slice(0, editCarIndex),
-        carToSave,
-        ...this.state.cars.slice(editCarIndex +1 )
-      ],
-      editCarId: 0,
-    });
-  };
-
-  editCar = editCarId => {
-    this.setState({
-      editCarId,
-    });
+    store: PropTypes.object,
   };
 
   render() {
 
+    const {
+      sortedCars, editCarId, addCar, deleteCar,
+      editCar, cancelCar, saveCar, sortCars, filterCars
+    } = this.props.store;
+
     return <div>
       <ToolHeader headerText="Car Tool" />
-      <CarTable {...this.state}
-        onDeleteCar={this.deleteCar} onEditCar={this.editCar}
-        onSaveCar={this.saveCar} onCancelCar={this.cancelCar}  />
-      <CarForm onSaveCar={this.addCar} />
+      <CarTable cars={sortedCars} editCarId={editCarId}
+        onDeleteCar={deleteCar} onEditCar={editCar}
+        onSaveCar={saveCar} onCancelCar={cancelCar}
+        onSortCars={sortCars} onFilterCars={filterCars}  />
+      <CarForm onSaveCar={addCar} />
     </div>;
   }
 }
