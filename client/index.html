@@ -6,75 +6,23 @@
   <meta charset="utf-8">
   <title>Starter Application</title>
   <link rel="icon" href="data:,">
+  <style>
+    #modal {
+      position: absolute;
+      top:50%;
+      left:50%;
+      height: 300px;
+      width: 500px;
+      margin-top:-150px;
+      margin-left:-250px;
+      border: 2px solid black;
+      background: white;
+    }
+  </style>
 </head>
 
 <body>
   <main class="container-fluid"></main>
-  <script>
-
-    'use strict';
-
-
-    // function outer() {
-
-    //   console.log('outer', this);
-
-    //   ///var that = this;
-
-    //   const inner = () => {
-
-    //     console.log('inner', this);
-
-    //   }
-
-    //   inner();
-    // }
-
-    // var o = { outer: outer, id: 2 };
-    // o.outer();
-
-
-
-    // var parent = {
-    //   amt: 2000,
-    //   name: 'Brian',
-    //   getInfo: function() {
-    //     return this.amt + this.name;
-    //   }
-    // };
-
-    // var child = Object.create(parent);
-    // child.name = 'Tom';
-    // child.amt = 100;
-    // //delete child.amt;
-
-    // console.log(child.getInfo());
-
-    // console.log(child.hasOwnProperty('amt'));
-
-    // console.log(child);
-
-
-
-    // function doIt() {
-    //   // call-site this
-    //   console.log(this);
-    // }
-
-    // doIt();
-
-    // window.doIt();
-
-    // const o = {
-    //   id: 1, 
-    //   doIt: doIt,
-    // };
-
-    // o.doIt();
-
-    // console.log(doIt === o.doIt);
-
-  </script>
 </body>
 
 </html>
