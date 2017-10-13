@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Starter Application</title>
+  <link rel="icon" href="data:,">
+  <style>
+    #modal {
+      position: absolute;
+      top:50%;
+      left:50%;
+      height: 300px;
+      width: 500px;
+      margin-top:-150px;
+      margin-left:-250px;
+      border: 2px solid black;
+      background: white;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container-fluid"></main>
+  <script>
+
+    var counter = 0;
+
+    counter++;
+    setTimeout(function() {
+      console.log('a');
+      counter--;
+      if (counter === 0) {
+        allDone();
+      }
+    }, 1000);
+
+    counter++;
+    setTimeout(function() {
+      console.log('b');
+      counter--;
+      if (counter === 0) {
+        allDone();
+      }
+    }, 3000);
+
+    counter++;
+    setTimeout(function() {
+      console.log('c');
+      counter--;
+      if (counter === 0) {
+        allDone();
+      }
+    }, 2000);
+
+    function allDone() {
+      console.log('all done');
+    }
+
+
+
+    // class Person { 
+    //   constructor(firstName) {
+    //     this.firstName = firstName;
+    //   }
+
+    //   getName() {
+    //     return this.firstName + '!';
+    //   }
+    // }
+
+    // function Person(firstName) {
+    //   this.firstName = firstName;
+    // }
+
+    // Person.prototype.getName = function() {
+    //   return this.firstName;
+    // }
+
+
+    // function createPerson() {
+
+    //   return {
+    //     _firstName = 'Bob',
+    //     _lastName = 'Smith',
+    //     getName() {
+    //       return this._firstName + ' ' + this._lastName;
+    //     }
+    //   }
+
+    // }
+
+    // var p = createPerson();
+    // console.log(g.getName());
+
+
+
+    // function outer() {
+
+    //   var t = 2;
+
+    //   setTimeout(function() {
+    //     t = 4;
+    //   }, 2000);
+
+    //   return function inner() {
+    //     console.log(t);
+    //   };
+    // }
+
+    // var innerFn = outer();
+
+    // innerFn();
+
+    // setTimeout(function() {
+    //   innerFn();
+    // }, 4000);
+
+  </script>
+</body>
+
+</html>

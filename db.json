@@ -51,15 +51,6 @@
   ],
   "widgets": [
     {
-      "id": 2,
-      "name": "Medium Blue Widget",
-      "description": "A medium, blue widget.",
-      "color": "blue",
-      "size": "medium",
-      "quantity": 15,
-      "ownerId": 2
-    },
-    {
       "id": 3,
       "name": "Large Green Widget",
       "description": "A large, green widget.",
@@ -69,21 +60,44 @@
       "ownerId": 1
     },
     {
-      "id": 4,
-      "name": "Tiny Orange Widget",
-      "description": "A tiny, orange widget.",
-      "color": "orange",
-      "size": "tiny",
-      "quantity": 10,
-      "ownerId": 3
-    },
-    {
       "name": "a",
       "description": "a",
       "color": "a",
       "size": "a",
       "quantity": 0,
       "id": 5
+    },
+    {
+      "name": "New Widget",
+      "description": "A new widget",
+      "color": "hot pink",
+      "size": "large",
+      "quantity": 10,
+      "id": 6
+    },
+    {
+      "name": "New Widget",
+      "description": "A new widget",
+      "color": "hot pink",
+      "size": "large",
+      "quantity": 10,
+      "id": 7
+    },
+    {
+      "name": "New Widget",
+      "description": "A new widget",
+      "color": "hot pink",
+      "size": "large",
+      "quantity": 10,
+      "id": 8
+    },
+    {
+      "name": "New Widget",
+      "description": "A new widget",
+      "color": "hot pink",
+      "size": "large",
+      "quantity": 10,
+      "id": 9
     }
   ],
   "people": [
