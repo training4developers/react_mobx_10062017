@@ -3,10 +3,7 @@ import { observable, computed, action } from 'mobx';
 export class CarStore {
 
   @observable
-  cars = [
-    { id: 2, make: ' Second Ford', model: 'Focus', year: 2015, color: 'yellow', price: 12000 },
-    { id: 1, make: 'First Ford', model: 'Fusion Hybrid', year: 2017, color: 'blue', price: 23000 },
-  ];
+  cars = [];
 
   @observable
   sortFieldName = 'id';
@@ -67,5 +64,12 @@ export class CarStore {
   filterCars = (filterFieldName, filterFieldValue) => {
     this.filterFieldName = filterFieldName;
     this.filterFieldValue = filterFieldValue;
+  };
+
+  @action
+  refreshCars = () => {
+    return fetch('http://localhost:3010/cars')
+      .then(res => res.json())
+      .then(action(cars => this.cars.replace(cars)));
   };
 }

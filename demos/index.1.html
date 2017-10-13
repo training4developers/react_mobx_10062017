@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Starter Application</title>
+  <link rel="icon" href="data:,">
+  <style>
+    #modal {
+      position: absolute;
+      top:50%;
+      left:50%;
+      height: 300px;
+      width: 500px;
+      margin-top:-150px;
+      margin-left:-250px;
+      border: 2px solid black;
+      background: white;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container-fluid"></main>
+  <script>
+
+    // const fetchData = (url, options = { method: 'GET', }) => {
+    //   return new Promise(
+    //     function(resolve) {
+    //       var xhr = new XMLHttpRequest();
+    //       xhr.addEventListener('readystatechange', function() {
+    //         if (xhr.status === 200 && xhr.readyState === 4) {
+    //           resolve(JSON.parse(xhr.responseText));
+    //         }
+
+    //       });
+    //       xhr.open(options.method, url);
+    //       xhr.send();
+    //     }
+    //   );
+
+    // };
+
+    const collectionURL = 'http://localhost:3010/widgets';
+    const elementURL = 'http://localhost:3010/widgets/4';
+
+    // get all of the widget
+    fetch(collectionURL)
+      .then(res => res.json())
+      .then(results => console.log(results));
+
+    // get a single with the specified id
+    fetch(elementURL)
+      .then(res => res.json())
+      .then(results => console.log(results));
+
+    // insert a widget
+    fetch(collectionURL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+        name: 'New Widget',
+        description: 'A new widget',
+        color: 'hot pink',
+        size: 'large',
+        quantity: 10,
+      }),
+    })
+      .then(res => res.json())
+      .then(results => console.log(results));
+
+    // replace a widget
+    fetch(elementURL, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+        id: 4,
+        name: 'New Widget',
+        description: 'A new widget',
+        color: 'hot pink',
+        size: 'large',
+        quantity: 10,
+      }),
+    })
+      .then(res => res.json())
+      .then(results => console.log(results));
+
+
+    // get a single with the specified id
+    fetch(elementURL, { method: 'DELETE' })
+      .then(res => res.json())
+      .then(results => console.log(results));
+    
+
+
+    // const p1 = new Promise(resolve => setTimeout(() => resolve('a'), 2000));
+    // const p2 = new Promise(resolve => setTimeout(() => resolve('b'), 4000));
+    // const p3 = new Promise(resolve => setTimeout(() => resolve('c'), 6000));
+    // const p4 = new Promise(resolve => setTimeout(() => resolve('d'), 8000));
+
+    // p1.then(results => console.log('resolved ', results));
+    // p2.then(results => console.log('resolved ', results));
+    // p3.then(results => console.log('resolved ', results));
+    // p4.then(results => console.log('resolved ', results));
+
+    // Promise.all([p1,p2,p3,p4]).then(results => {
+    //   console.log(results);
+    //   console.log('all done');
+    // });
+
+
+    // function proposeMarriage() {
+    //   return new Promise(resolve =>
+    //     setTimeout(() => resolve('yes, she is madly in love with him...'), 2000));
+    // }
+
+    // function findLocation() {
+    //   return new Promise(resolve =>
+    //     setTimeout(() => resolve('found a location'), 2000));
+    // }
+
+    // async function getMarried() {
+
+    //   let result;
+
+    //   result = await proposeMarriage();
+    //   console.log(result);
+
+    //   result = await findLocation();
+    //   console.log(result);
+    // }
+
+    // getMarried().then(() => console.log('all married'));
+
+    // // proposeMarriage()
+    // //   .then(results => {
+    // //     console.log(results);
+    // //     return findLocation();
+    // //   })
+    // //   .then(results => console.log(results));
+
+
+    // console.log('young man is waiting');
+    
+    // const youngMan = new Promise(function youngLady(resolve, reject) {
+
+    //   setTimeout(function() {
+    //     resolve('yes, she is madly in love with him...');
+    //   }, 2000);
+
+    // });
+
+    // youngMan.then(function(result) {
+    //   console.log(result);
+    //   console.log('yay she said yes!');
+
+    //   console.log('looking for a location');
+    //   return new Promise(function(resolve) {
+
+    //     setTimeout(function() {
+    //       resolve('found a location');
+    //     }, 2000);
+
+    //   });
+
+    // }).then(function(results) {
+
+    //   console.log(results);
+    //   console.log('time to get married');
+
+    // }).catch(function(result) {
+    //   console.log(result);
+    //   console.log('she said no, time to sign up for eHarmony');
+    // });
+
+
+  </script>
+</body>
+
+</html>

@@ -13,6 +13,10 @@ export class CarTool extends React.Component {
     store: PropTypes.object,
   };
 
+  componentDidMount() {
+    this.props.store.refreshCars();
+  }
+
   render() {
 
     const {
