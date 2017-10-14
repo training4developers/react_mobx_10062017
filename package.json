@@ -135,28 +135,7 @@
         "lines": 90,
         "statements": 90
       }
-    },
-    "unmockedModulePathPatterns": [
-      "react",
-      "react-dom",
-      "react-addons-test-utils",
-      "react-test-renderer",
-      "fbjs",
-      "enzyme",
-      "cheerio",
-      "htmlparser2",
-      "underscore",
-      "lodash",
-      "domhandler",
-      "object.assign",
-      "define-properties",
-      "function-bind",
-      "object-keys",
-      "redux",
-      "react-redux",
-      "mobx",
-      "mobx-react"
-    ]
+    }
   },
   "devServer": {
     "contentBase": "client-dist",
