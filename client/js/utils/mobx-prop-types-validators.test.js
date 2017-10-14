@@ -4,19 +4,12 @@ import { observable } from 'mobx';
 
 import { MobxPropTypes } from './mobx-prop-types-validators';
 
-jest.unmock('./mobx-prop-types-validators');
-
 describe('Obserable Value PropTypes', () => {
 
   let TestComponent;
 
   beforeEach(() => {
-    TestComponent = class extends React.Component {
-      displayName = 'TestComponent';
-      render() {
-        return null;
-      }
-    };
+    TestComponent = () => null;
   });
 
   describe('Observable Value Only', () => {

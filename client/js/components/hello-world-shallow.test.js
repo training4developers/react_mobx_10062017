@@ -4,9 +4,7 @@ import { shallow } from 'enzyme';
 
 import { HelloWorld } from './hello-world';
 
-jest.unmock('./hello-world');
-
-xdescribe('<HelloWorld /> Shallow with React Test Renderer', () => {
+describe('<HelloWorld /> Shallow with React Test Renderer', () => {
 
   let component;
 
@@ -22,7 +20,7 @@ xdescribe('<HelloWorld /> Shallow with React Test Renderer', () => {
 
 });
 
-xdescribe('<HelloWorld /> Shallow with Enzyme', () => {
+describe('<HelloWorld /> Shallow with Enzyme', () => {
 
   let component;
 

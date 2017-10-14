@@ -4,9 +4,7 @@ import { mount } from 'enzyme';
 
 import { HelloWorld } from './hello-world';
 
-jest.unmock('./hello-world');
-
-xdescribe('<HelloWorld /> Test Utils Mock DOM', () => {
+describe('<HelloWorld /> Test Utils Mock DOM', () => {
 
   let component;
   let componentDOMNode;
@@ -22,7 +20,7 @@ xdescribe('<HelloWorld /> Test Utils Mock DOM', () => {
 
 });
 
-xdescribe('<HelloWorld /> Enzyme Mock DOM', () => {
+describe('<HelloWorld /> Enzyme Mock DOM', () => {
 
   let component;
   let componentDOMNode;
