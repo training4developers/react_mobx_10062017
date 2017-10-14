@@ -5,13 +5,14 @@ export const MobxPropTypes = Object.freeze(new class {
 
   constructor() {
     Object.assign(this, StandardMobxPropTypes);
+    this.observableValue.isRequired = this.createIsRequired(this.observableValue);
     this.observableNumber = this.createObservableValueSpecificType('number', true);
     this.observableString = this.createObservableValueSpecificType('string', true);
     this.observableBoolean = this.createObservableValueSpecificType('boolean', true);
   }
 
   observableValue(props, propName, componentName) {
-    
+
     return !isBoxedObservable(props[propName]) &&
       new Error(`Invalid prop \`${propName}\` of type \`${typeof props[propName]}\` supplied to \`${componentName}\`, expected an \`observable\`.`);
   }

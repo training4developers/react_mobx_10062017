@@ -41,6 +41,7 @@
     "copy-webpack-plugin": "4.1.1",
     "css-loader": "0.28.7",
     "enzyme": "3.1.0",
+    "enzyme-adapter-react-16": "^1.0.1",
     "esformatter": "0.10.0",
     "esformatter-jsx": "8.0.1",
     "eslint": "4.8.0",
@@ -120,6 +121,9 @@
   },
   "jest": {
     "testEnvironment": "jsdom",
+    "setupFiles": [
+      "./config/test-setup.js"
+    ],
     "collectCoverageFrom": [
       "client/**/*.js",
       "server/**/*.js"
@@ -136,6 +140,7 @@
       "react",
       "react-dom",
       "react-addons-test-utils",
+      "react-test-renderer",
       "fbjs",
       "enzyme",
       "cheerio",
@@ -146,7 +151,11 @@
       "object.assign",
       "define-properties",
       "function-bind",
-      "object-keys"
+      "object-keys",
+      "redux",
+      "react-redux",
+      "mobx",
+      "mobx-react"
     ]
   },
   "devServer": {

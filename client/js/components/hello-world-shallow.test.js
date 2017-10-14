@@ -6,7 +6,7 @@ import { HelloWorld } from './hello-world';
 
 jest.unmock('./hello-world');
 
-describe('<HelloWorld /> Shallow with React Test Renderer', () => {
+xdescribe('<HelloWorld /> Shallow with React Test Renderer', () => {
 
   let component;
 
@@ -22,7 +22,7 @@ describe('<HelloWorld /> Shallow with React Test Renderer', () => {
 
 });
 
-describe('<HelloWorld /> Shallow with Enzyme', () => {
+xdescribe('<HelloWorld /> Shallow with Enzyme', () => {
 
   let component;
 

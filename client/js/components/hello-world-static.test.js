@@ -4,7 +4,7 @@ import { render } from 'enzyme';
 
 import { HelloWorld } from './hello-world';
 
-describe('<HelloWorld /> React Test Renderer Static HTML', () => {
+xdescribe('<HelloWorld /> React Test Renderer Static HTML', () => {
 
   it('<HelloWorld /> renders', () => {
 
@@ -15,7 +15,7 @@ describe('<HelloWorld /> React Test Renderer Static HTML', () => {
 
 });
 
-describe('<HelloWorld /> Enzyme Static HTML', () => {
+xdescribe('<HelloWorld /> Enzyme Static HTML', () => {
 
   it('<HelloWorld /> renders', () => {
     const component = JSON.stringify(render(<HelloWorld />).html());
