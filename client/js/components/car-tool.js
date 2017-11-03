@@ -1,11 +1,12 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { observer } from 'mobx-react';
+import { observer, inject } from 'mobx-react';
 
 import { ToolHeader } from './tool-header';
 import { CarTable } from './car-table';
 import { CarForm } from './car-form';
 
+@inject('store')
 @observer
 export class CarTool extends React.Component {
 
