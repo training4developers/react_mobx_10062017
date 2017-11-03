@@ -6,6 +6,18 @@ import { ToolHeader } from './tool-header';
 import { CarTable } from './car-table';
 import { CarForm } from './car-form';
 
+class ErrorBoundary extends React.Component {
+
+  componentDidCatch() {
+    console.log('error occurred');
+  }
+
+  render() {
+    return this.props.children;
+  }
+
+}
+
 @inject('store')
 @observer
 export class CarTool extends React.Component {
@@ -26,7 +38,9 @@ export class CarTool extends React.Component {
     } = this.props.store;
 
     return <div>
-      <ToolHeader headerText="Car Tool" />
+      <ErrorBoundary>
+        <ToolHeader headerText="Car Tool" />
+      </ErrorBoundary>
       <CarTable cars={sortedCars} editCarId={editCarId}
         onDeleteCar={deleteCar} onEditCar={editCar}
         onSaveCar={saveCar} onCancelCar={cancelCar}

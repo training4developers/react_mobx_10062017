@@ -4,6 +4,34 @@ import { ToolHeader } from './tool-header';
 import { ColorTable } from './color-table';
 import { ColorForm } from './color-form';
 
+class ErrorBoundary extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      hasError: false,
+    };
+  }
+  
+  componentDidCatch(error, info) {
+    console.log(error, info);
+
+    this.setState({
+      hasError: true,
+    });
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return 'Something went wrong!';
+    } else {
+      return this.props.children;
+    }
+  }
+
+}
+
 export class ColorTool extends React.Component {
 
   constructor(props) {
@@ -56,7 +84,9 @@ export class ColorTool extends React.Component {
 
   render() {
     return <div>
-      <ToolHeader headerText="Color Tool!" />
+      <ErrorBoundary>
+        <ToolHeader headerText="Color Tool!" />
+      </ErrorBoundary>
       <ColorTable colors={this.state.colors} editRowId={this.state.editRowId}
         onEdit={this.editColor} onSave={this.saveColor} onCancel={this.cancel} />
       <ColorForm onSaveColor={this.addColor} />
