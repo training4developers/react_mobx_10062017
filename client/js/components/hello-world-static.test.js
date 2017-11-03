@@ -6,7 +6,7 @@ import { HelloWorld } from './hello-world';
 
 describe('<HelloWorld /> React Test Renderer Static HTML', () => {
 
-  it('<HelloWorld /> renders', () => {
+  test('<HelloWorld /> renders', () => {
 
     const tree = renderer.create(<HelloWorld />).toJSON();
     expect(tree).toMatchSnapshot();
@@ -17,7 +17,7 @@ describe('<HelloWorld /> React Test Renderer Static HTML', () => {
 
 describe('<HelloWorld /> Enzyme Static HTML', () => {
 
-  it('<HelloWorld /> renders', () => {
+  test('<HelloWorld /> renders', () => {
     const component = JSON.stringify(render(<HelloWorld />).html());
     expect(component).toMatchSnapshot();
   });

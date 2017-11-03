@@ -27,7 +27,10 @@ const App = () => {
           <button type="button" onClick={() => history.push('/colors')}>Colors</button>
         </div>;
       }} />
-      <Route path="/colors" component={ColorPage} />
+      <Route exact path="/colors" component={ColorPage} />
+      <Route path="/colors/:colorId/edit" render={ ({ match }) => {
+        return <span>Editing {match.params.colorId}</span>; 
+      }} />
       <footer>
         <small>Copyright 2017, A Cool Company, Inc.</small>
       </footer>
